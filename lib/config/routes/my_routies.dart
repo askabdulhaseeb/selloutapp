@@ -5,6 +5,10 @@ import 'package:selloutapp/featuers/listing/display_listings/presentation/screen
 import 'package:selloutapp/featuers/payment/display_payment/presentation/screens/display_payable_payment_screen.dart';
 import 'package:selloutapp/featuers/promo/create_promo/presentation/screens/create_promo_screen.dart';
 import 'package:selloutapp/featuers/promo/display_promo/presentation/screens/display_promo_screen.dart';
+import 'package:selloutapp/featuers/review/display_review/presentation/screens/display_review_screen.dart';
+import 'package:selloutapp/featuers/review/give_review/presentation/screens/give_review_screen.dart';
+import 'package:selloutapp/featuers/user/display_profile/display_profile_screen.dart';
+import 'package:selloutapp/featuers/user/edit_profile/presentation/screens/edit_profile_screen.dart';
 
 import '../../featuers/auth/signin/presentation/screens/signin_screen.dart';
 import '../../featuers/auth/signup/presentation/screens/signup_screen.dart';
@@ -14,6 +18,9 @@ final Map<String, WidgetBuilder> myRoutes = <String, WidgetBuilder>{
   SigninScreen.routeName: (_) => const SigninScreen(),
   SignupScreen.routeName: (_) => const SignupScreen(),
   // DASHBOARD
+  // USER
+  DisplayProfileScreen.routeName: (_) => const DisplayProfileScreen(),
+  EditProfileScreen.routeName: (_) => const EditProfileScreen(),
   // LISTING
   CreateListingsScreen.routeName: (_) => const CreateListingsScreen(),
   DisplayListingsScreen.routeName: (_) => const DisplayListingsScreen(),
@@ -25,4 +32,7 @@ final Map<String, WidgetBuilder> myRoutes = <String, WidgetBuilder>{
   // PAYMENT
   DisplayPayablePaymentScreen.routeName: (_) =>
       const DisplayPayablePaymentScreen(),
+  // REVIEW
+  GiveReviewScreen.routeName: (_) => const GiveReviewScreen(),
+  DisplayReviewScreen.routeName: (_) => const DisplayReviewScreen(),
 };
