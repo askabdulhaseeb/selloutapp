@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../../../core/widgets/auth_sellout_title_widget.dart';
 
-class SigninScreen extends StatelessWidget {
-  const SigninScreen({Key? key}) : super(key: key);
-  static const String routeName = '/signin';
+class SignupScreen extends StatelessWidget {
+  const SignupScreen({Key? key}) : super(key: key);
+  static const String routeName = '/signup';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
