@@ -3,7 +3,18 @@ import 'package:flutter/material.dart';
 class SignupProvider extends ChangeNotifier {
   void onSignup(BuildContext context) {
     if (!(_key.currentState?.validate() ?? false)) return;
-    // TODO: ON SIGNIN
+    try {
+      _onLoadingUpdate(true);
+      // TODO: ON SIGNUP
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+    _onLoadingUpdate(false);
+  }
+
+  void _onLoadingUpdate(bool value) {
+    _isLoading = value;
+    notifyListeners();
   }
 
   //

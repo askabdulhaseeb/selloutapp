@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
@@ -29,7 +28,7 @@ class _NetworkVideoPlayerState extends State<NetworkVideoPlayer> {
   }
 
   _init() async {
-    controller = VideoPlayerController.network(widget.url);
+    controller = VideoPlayerController.networkUrl(Uri(path: widget.url));
     await controller.initialize().then((_) {
       widget.isPlay ? controller.play() : controller.pause();
       controller.setVolume(widget.isMute ? 0 : 1);

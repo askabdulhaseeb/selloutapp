@@ -3,12 +3,24 @@ import 'package:flutter/material.dart';
 class SigninProvider extends ChangeNotifier {
   void onSignIn(BuildContext context) {
     if (!(_key.currentState?.validate() ?? false)) return;
-    // TODO: ON SIGNIN
+    try {
+      _onLoadingUpdate(true);
+      // TODO: ON SIGNIN
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+    _onLoadingUpdate(false);
   }
 
   void onForgetPassword(BuildContext context) {
     // TODO: ON FORGET PASSWORD
   }
+
+  void _onLoadingUpdate(bool value) {
+    _isLoading = value;
+    notifyListeners();
+  }
+
   //
   // GETTERS
   //

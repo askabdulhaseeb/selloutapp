@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:selloutapp/utils/app_validator.dart';
+import '../../utils/app_validator.dart';
 
 class PasswordTextFormField extends StatefulWidget {
   const PasswordTextFormField({

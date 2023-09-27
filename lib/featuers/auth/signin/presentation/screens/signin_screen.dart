@@ -16,9 +16,9 @@ class SigninScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: EdgeInsets.symmetric(horizontal: 16),
           child: Column(
             children: <Widget>[
               AuthSelloutTitleWidget(),

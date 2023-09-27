@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:selloutapp/config/routes/my_providers.dart';
-import 'package:selloutapp/config/routes/my_routies.dart';
+import 'config/routes/my_providers.dart';
+import 'config/routes/my_routies.dart';
 
 void main() {
   runApp(const MyApp());
