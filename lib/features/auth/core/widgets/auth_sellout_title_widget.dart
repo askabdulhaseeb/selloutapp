@@ -9,6 +9,7 @@ class AuthSelloutTitleWidget extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       child: Column(
         children: <Widget>[
+          const SizedBox(height: 60),
           Text(
             'SellOut',
             style: TextStyle(

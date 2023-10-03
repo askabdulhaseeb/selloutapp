@@ -9,6 +9,7 @@ class CustomTextFormField extends StatefulWidget {
     this.onChanged,
     this.validator,
     this.initialValue,
+    this.title,
     this.hint = '',
     this.color,
     this.contentPadding,
@@ -39,6 +40,7 @@ class CustomTextFormField extends StatefulWidget {
   final int? maxLength;
   final Color? color;
   final String? initialValue;
+  final String? title;
   final String? hint;
   final bool readOnly;
   final bool isExpanded;
@@ -66,62 +68,64 @@ class CustomTextFormFieldState extends State<CustomTextFormField> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 6),
-      padding:
-          widget.contentPadding ?? const EdgeInsets.symmetric(horizontal: 12),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(14),
-        color: widget.color ?? Theme.of(context).dividerTheme.color,
-      ),
-      child: TextFormField(
-        initialValue: widget.initialValue,
-        controller: widget._controller,
-        readOnly: widget.readOnly,
-        keyboardType: widget.keyboardType == TextInputType.number
-            ? const TextInputType.numberWithOptions(decimal: true)
-            : widget.maxLines! > 1
-                ? TextInputType.multiline
-                : widget.keyboardType ?? TextInputType.text,
-        textInputAction: widget.maxLines! > 1
-            ? TextInputAction.newline
-            : widget.textInputAction ?? TextInputAction.next,
-        autofocus: widget.autoFocus,
-        textAlign: widget.textAlign,
-        onChanged: widget.onChanged,
-        minLines: widget.isExpanded ? widget.maxLines : widget.minLines,
-        maxLines: widget.isExpanded
-            ? widget.maxLines
-            : (widget._controller!.text.isEmpty)
-                ? 1
-                : widget.maxLines,
-        maxLength: widget.maxLength,
-        style: widget.style,
-        validator: (String? value) =>
-            widget.validator == null ? null : widget.validator!(value),
-        cursorColor: Theme.of(context).colorScheme.secondary,
-        decoration: InputDecoration(
-          fillColor: widget.color ??
-              Theme.of(context).textTheme.bodyLarge!.color!.withOpacity(0.15),
-          hintText: widget.hint,
-          prefixIcon: widget.prefixIcon,
-          hintStyle: widget.hint!.length > 15
-              ? TextStyle(fontSize: 14, color: Colors.grey.shade400)
-              : TextStyle(fontSize: 15, color: Colors.grey.shade400),
-          suffixIcon: (widget._controller!.text.isEmpty ||
-                  !widget.showSuffixIcon ||
-                  widget.showSuffixIcon == false)
-              ? null
-              : IconButton(
-                  splashRadius: 16,
-                  onPressed: () => setState(() {
-                    widget._controller!.clear();
-                  }),
-                  icon: const Icon(CupertinoIcons.clear, size: 18),
-                ),
-          focusColor: Theme.of(context).primaryColor,
-          border: widget.border ?? InputBorder.none,
-        ),
+    return Padding(
+      padding: widget.contentPadding ?? const EdgeInsets.symmetric(vertical: 6),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            widget.title ?? '',
+            style: const TextStyle(fontWeight: FontWeight.bold),
+          ),
+          TextFormField(
+            initialValue: widget.initialValue,
+            controller: widget._controller,
+            readOnly: widget.readOnly,
+            keyboardType: widget.keyboardType == TextInputType.number
+                ? const TextInputType.numberWithOptions(decimal: true)
+                : widget.maxLines! > 1
+                    ? TextInputType.multiline
+                    : widget.keyboardType ?? TextInputType.text,
+            textInputAction: widget.maxLines! > 1
+                ? TextInputAction.newline
+                : widget.textInputAction ?? TextInputAction.next,
+            autofocus: widget.autoFocus,
+            textAlign: widget.textAlign,
+            onChanged: widget.onChanged,
+            minLines: widget.isExpanded ? widget.maxLines : widget.minLines,
+            maxLines: widget.isExpanded
+                ? widget.maxLines
+                : (widget._controller!.text.isEmpty)
+                    ? 1
+                    : widget.maxLines,
+            maxLength: widget.maxLength,
+            style: widget.style,
+            validator: (String? value) =>
+                widget.validator == null ? null : widget.validator!(value),
+            cursorColor: Theme.of(context).colorScheme.secondary,
+            decoration: InputDecoration(
+              contentPadding: const EdgeInsets.symmetric(horizontal: 12),
+              hintText: widget.hint,
+              prefixIcon: widget.prefixIcon,
+              hintStyle: widget.hint!.length > 15
+                  ? TextStyle(fontSize: 14, color: Colors.grey.shade400)
+                  : TextStyle(fontSize: 15, color: Colors.grey.shade400),
+              suffixIcon: (widget._controller!.text.isEmpty ||
+                      !widget.showSuffixIcon ||
+                      widget.showSuffixIcon == false)
+                  ? null
+                  : IconButton(
+                      splashRadius: 16,
+                      onPressed: () => setState(() {
+                        widget._controller!.clear();
+                      }),
+                      icon: const Icon(CupertinoIcons.clear, size: 18),
+                    ),
+              focusColor: Theme.of(context).primaryColor,
+              border: widget.border ?? const OutlineInputBorder(),
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class AppThemes {
-  static const Color _primary = Color(0xFF4C58DC);
-  static const Color _secondary = Color(0xFFFF8686);
+  static const Color _primary = Color(0xffBF1017);
+  static const Color _secondary = Color.fromRGBO(2, 122, 190, 1);
 
   static const Color _darkScaffoldColor = Color(0xFF101018);
-  static const Color _lightScaffoldColor = Colors.white;
+  static const Color _lightScaffoldColor = Color(0xFFF9F9F9);
 
   //
   // Dark
@@ -26,11 +26,12 @@ class AppThemes {
     primaryColor: _primary,
     iconTheme: const IconThemeData(color: Colors.white),
     dividerTheme: DividerThemeData(color: Colors.grey.shade200, thickness: 0.5),
-    dividerColor: Colors.grey.shade300,
+    dividerColor: Colors.grey,
     listTileTheme: const ListTileThemeData(
       contentPadding: EdgeInsets.symmetric(horizontal: 16),
       horizontalTitleGap: 10,
     ),
+    cardColor: Colors.black,
     dialogTheme: const DialogTheme(surfaceTintColor: _darkScaffoldColor),
     bottomSheetTheme:
         const BottomSheetThemeData(surfaceTintColor: _darkScaffoldColor),
@@ -59,11 +60,12 @@ class AppThemes {
     primaryColor: _primary,
     iconTheme: const IconThemeData(color: Colors.black),
     dividerTheme: DividerThemeData(color: Colors.grey.shade200, thickness: 0.5),
-    dividerColor: Colors.grey.shade300,
+    dividerColor: Colors.grey,
     listTileTheme: const ListTileThemeData(
       contentPadding: EdgeInsets.symmetric(horizontal: 16),
       horizontalTitleGap: 10,
     ),
+    cardColor: Colors.white,
     dialogTheme: const DialogTheme(surfaceTintColor: _lightScaffoldColor),
     bottomSheetTheme:
         const BottomSheetThemeData(surfaceTintColor: _lightScaffoldColor),

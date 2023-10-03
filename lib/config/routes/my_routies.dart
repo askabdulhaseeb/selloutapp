@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-import '../../featuers/auth/signin/presentation/screens/signin_screen.dart';
-import '../../featuers/auth/signup/presentation/screens/signup_screen.dart';
-import '../../featuers/cart/display_cart/presentation/screens/display_cart_screen.dart';
-import '../../featuers/listing/create_listing/presentation/screens/create_listing_screen.dart';
-import '../../featuers/listing/display_listings/presentation/screens/display_listings_screen.dart';
-import '../../featuers/payment/display_payment/presentation/screens/display_payable_payment_screen.dart';
-import '../../featuers/promo/create_promo/presentation/screens/create_promo_screen.dart';
-import '../../featuers/promo/display_promo/presentation/screens/display_promo_screen.dart';
-import '../../featuers/review/display_review/presentation/screens/display_review_screen.dart';
-import '../../featuers/review/give_review/presentation/screens/give_review_screen.dart';
-import '../../featuers/user/display_profile/display_profile_screen.dart';
-import '../../featuers/user/edit_profile/presentation/screens/edit_profile_screen.dart';
+import '../../features/auth/signin/presentation/screens/signin_screen.dart';
+import '../../features/auth/signup/presentation/screens/signup_screen.dart';
+import '../../features/cart/display_cart/presentation/screens/display_cart_screen.dart';
+import '../../features/listing/create_listing/presentation/screens/create_listing_screen.dart';
+import '../../features/listing/display_listings/presentation/screens/display_listings_screen.dart';
+import '../../features/payment/display_payment/presentation/screens/display_payable_payment_screen.dart';
+import '../../features/promo/create_promo/presentation/screens/create_promo_screen.dart';
+import '../../features/promo/display_promo/presentation/screens/display_promo_screen.dart';
+import '../../features/review/display_review/presentation/screens/display_review_screen.dart';
+import '../../features/review/give_review/presentation/screens/give_review_screen.dart';
+import '../../features/user/display_profile/display_profile_screen.dart';
+import '../../features/user/edit_profile/presentation/screens/edit_profile_screen.dart';
 
 final Map<String, WidgetBuilder> myRoutes = <String, WidgetBuilder>{
   // AUTH

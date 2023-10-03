@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'config/routes/my_providers.dart';
 import 'config/routes/my_routies.dart';
+import 'config/themes/app_theme.dart';
+import 'features/auth/signin/presentation/screens/signin_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,11 +17,8 @@ class MyApp extends StatelessWidget {
       providers: myProviders,
       child: MaterialApp(
         title: 'Sellout App',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
-        home: const Scaffold(body: Center(child: Text('Init'))),
+        theme: AppThemes.light,
+        home: const SigninScreen(),
         routes: myRoutes,
       ),
     );
