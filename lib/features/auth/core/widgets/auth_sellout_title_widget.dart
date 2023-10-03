@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AuthSelloutTitleWidget extends StatelessWidget {
-  const AuthSelloutTitleWidget({super.key});
+  const AuthSelloutTitleWidget({this.subtitle, super.key});
+  final String? subtitle;
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +19,9 @@ class AuthSelloutTitleWidget extends StatelessWidget {
               color: Theme.of(context).primaryColor,
             ),
           ),
-          const Text(
-            'SellOut helps you sell the stuff you want to the people you want',
+          Text(
+            subtitle ??
+                'SellOut helps you sell the stuff you want to the people you want',
             textAlign: TextAlign.center,
           ),
         ],

@@ -1,14 +1,17 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:intl_phone_field/phone_number.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../../core/widgets/custom_elevated_button.dart';
 import '../../../../../core/widgets/custom_textformfield.dart';
 import '../../../../../core/widgets/password_textformfield.dart';
+import '../../../../../core/widgets/phone_number_field.dart';
 import '../../../../../utils/app_validator.dart';
 import '../../../core/widgets/auth_bottom_feature_display_widget.dart';
 import '../../../core/widgets/auth_sellout_title_widget.dart';
 import '../providers/signup_provider.dart';
+import 'account_type_screen.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({Key? key}) : super(key: key);
@@ -50,6 +53,11 @@ class SignupScreen extends StatelessWidget {
                         validator: (String? value) =>
                             AppValidator.username(context, value),
                       ),
+                      PhoneNumberField(
+                        initialCountryCode: suPro.phoneNumber.countryCode,
+                        onChange: (PhoneNumber? value) =>
+                            suPro.onPhoneNumberUpdate(value),
+                      ),
                       CustomTextFormField(
                         controller: suPro.email,
                         title: 'Email',
@@ -72,7 +80,8 @@ class SignupScreen extends StatelessWidget {
                       CustomElevatedButton(
                         title: 'Continue',
                         isLoading: suPro.isLoading,
-                        onTap: () => suPro.onSignup(context),
+                        onTap: () => Navigator.of(context)
+                            .pushNamed(AccountTypeScreen.routeName),
                       ),
                       const SizedBox(height: 8),
                       RichText(

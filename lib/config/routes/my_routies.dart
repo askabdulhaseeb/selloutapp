@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../features/auth/signin/presentation/screens/signin_screen.dart';
+import '../../features/auth/signup/presentation/screens/account_type_screen.dart';
+import '../../features/auth/signup/presentation/screens/business_info_input_screen.dart';
 import '../../features/auth/signup/presentation/screens/signup_screen.dart';
 import '../../features/cart/display_cart/presentation/screens/display_cart_screen.dart';
 import '../../features/listing/create_listing/presentation/screens/create_listing_screen.dart';
@@ -17,6 +19,8 @@ final Map<String, WidgetBuilder> myRoutes = <String, WidgetBuilder>{
   // AUTH
   SigninScreen.routeName: (_) => const SigninScreen(),
   SignupScreen.routeName: (_) => const SignupScreen(),
+  AccountTypeScreen.routeName: (_) => const AccountTypeScreen(),
+  BusinessInfoInputScreen.routeName: (_) => const BusinessInfoInputScreen(),
   // DASHBOARD
   // USER
   DisplayProfileScreen.routeName: (_) => const DisplayProfileScreen(),

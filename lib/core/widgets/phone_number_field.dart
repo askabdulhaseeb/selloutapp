@@ -19,25 +19,29 @@ class PhoneNumberField extends StatefulWidget {
 class _PhoneNumberFieldState extends State<PhoneNumberField> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(top: 10, right: 10),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        color: Theme.of(context).dividerTheme.color,
-      ),
-      child: IntlPhoneField(
-        textInputAction: TextInputAction.done,
-        showCountryFlag: true,
-        decoration: const InputDecoration(
-          contentPadding: EdgeInsets.symmetric(horizontal: 12),
-          enabledBorder: InputBorder.none,
-          labelText: 'Mobile number',
-          labelStyle: TextStyle(color: Colors.grey),
-          border: InputBorder.none,
-        ),
-        initialCountryCode: 'GB',
-        keyboardType: TextInputType.number,
-        onChanged: widget.onChange!,
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 6),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          const Text(
+            'Phone Number',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          IntlPhoneField(
+            textInputAction: TextInputAction.done,
+            showCountryFlag: false,
+            decoration: const InputDecoration(
+              contentPadding: EdgeInsets.symmetric(horizontal: 12),
+              labelText: 'Mobile number',
+              labelStyle: TextStyle(color: Colors.grey),
+              border: OutlineInputBorder(),
+            ),
+            initialCountryCode: widget.initialCountryCode ?? 'GB',
+            keyboardType: TextInputType.number,
+            onChanged: widget.onChange!,
+          ),
+        ],
       ),
     );
   }
