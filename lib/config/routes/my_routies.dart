@@ -5,6 +5,7 @@ import '../../features/auth/signup/presentation/screens/account_type_screen.dart
 import '../../features/auth/signup/presentation/screens/business_info_input_screen.dart';
 import '../../features/auth/signup/presentation/screens/signup_screen.dart';
 import '../../features/cart/display_cart/presentation/screens/display_cart_screen.dart';
+import '../../features/dashboard/presentation/screens/dashboard_screen.dart';
 import '../../features/listing/create_listing/presentation/screens/create_listing_screen.dart';
 import '../../features/listing/display_listings/presentation/screens/display_listings_screen.dart';
 import '../../features/payment/display_payment/presentation/screens/display_payable_payment_screen.dart';
@@ -22,6 +23,7 @@ final Map<String, WidgetBuilder> myRoutes = <String, WidgetBuilder>{
   AccountTypeScreen.routeName: (_) => const AccountTypeScreen(),
   BusinessInfoInputScreen.routeName: (_) => const BusinessInfoInputScreen(),
   // DASHBOARD
+  DashboardScreen.routeName: (_) => const DashboardScreen(),
   // USER
   DisplayProfileScreen.routeName: (_) => const DisplayProfileScreen(),
   EditProfileScreen.routeName: (_) => const EditProfileScreen(),

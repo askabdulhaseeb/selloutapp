@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 
-class AppBarIconButton extends StatelessWidget {
-  const AppBarIconButton({
+class AppBarIconButtonWidget extends StatelessWidget {
+  const AppBarIconButtonWidget({
     required this.icon,
     required this.onTap,
-    this.iconColor,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   final IconData icon;
-  final Color? iconColor;
   final VoidCallback onTap;
 
   @override
@@ -17,12 +15,13 @@ class AppBarIconButton extends StatelessWidget {
       onTap: onTap,
       borderRadius: BorderRadius.circular(12),
       child: Container(
-        padding: const EdgeInsets.all(8),
+        height: 44,
+        width: 44,
         decoration: BoxDecoration(
-          color: Theme.of(context).dividerTheme.color,
+          color: Theme.of(context).dividerColor.withOpacity(0.3),
           borderRadius: BorderRadius.circular(12),
         ),
-        child: Icon(icon, color: iconColor ?? Colors.black),
+        child: Icon(icon),
       ),
     );
   }
