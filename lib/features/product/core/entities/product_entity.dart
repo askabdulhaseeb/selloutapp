@@ -47,32 +47,32 @@ class ProductEntity {
         reports = reports ?? <ReportProductEntity>[],
         timestamp = timestamp ?? DateTime.now();
 
-  late String pid;
-  late String uid;
+  final String pid;
+  final String uid;
   final String listID;
-  late String title;
-  late List<AttachmentEntity> prodURL;
-  late ProdConditionEnum condition;
-  late String description;
+  final String title;
+  final List<AttachmentEntity> prodURL;
+  final ProdConditionEnum condition;
+  final String description;
   final String category;
-  late List<String> categoryPaths;
-  // late List<String> subCategories;
-  late double price;
-  late String currency;
-  late String? location;
-  late int quantity;
+  final List<String> categoryPaths;
+  // final List<String> subCategories;
+  final double price;
+  final String currency;
+  final String? location;
+  final int quantity;
   final List<ProductPropertyType> properties;
-  late bool acceptOffers;
+  final bool acceptOffers;
   double offerLimit;
-  late ProdPrivacyTypeEnum privacy;
+  final ProdPrivacyTypeEnum privacy;
   String accessCode;
   List<ProdSharedWithEntity> shareWith;
-  late ProdDeliveryTypeEnum delivery;
-  late double deliveryFree;
+  final ProdDeliveryTypeEnum delivery;
+  final double deliveryFree;
   final List<ProdOrderEntity> orders;
   final List<ProdOfferEntity> offers;
   final List<ReportProductEntity> reports;
-  late DateTime timestamp;
+  final DateTime timestamp;
   bool isAvailable; // available for sale any more are not
   dynamic listInfo;
 }

@@ -18,7 +18,7 @@ class ProdOfferEntity {
   final String chatId;
   double price;
   final ProdDeliveryTypeEnum deliveryType;
-  final int orderTime;
-  int responseTime;
+  final DateTime orderTime;
+  DateTime responseTime;
   ProdOfferStatusEnum status;
 }

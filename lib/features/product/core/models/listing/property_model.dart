@@ -37,8 +37,8 @@ class PropertyModel extends PropertyEntity {
       'has_garden': hasGarden,
       'has_parking': hasParking,
       'is_animal_friendly': isAnimalFriendly,
-      'date_available': dateAvailable?.millisecondsSinceEpoch ??
-          DateTime.now().add(const Duration(days: 30)).millisecondsSinceEpoch,
+      'date_available':
+          dateAvailable ?? DateTime.now().add(const Duration(days: 30)),
       'tenure_type': tenureType.json,
       'energy_rate': energyRate.json,
     };
@@ -47,7 +47,7 @@ class PropertyModel extends PropertyEntity {
   // ignore: sort_constructors_first
   factory PropertyModel.fromMap(Map<String, dynamic> map) {
     return PropertyModel(
-      isForSale: map['is_for_sale'] as bool,
+      isForSale: map['is_for_sale'] ?? false,
       property:
           PropertiesFun.fromMap(map['property'] ?? Properties.others.json),
       bedrooms: map['bedrooms'] ?? 0,
@@ -55,10 +55,9 @@ class PropertyModel extends PropertyEntity {
       hasGarden: map['has_garden'] ?? true,
       hasParking: map['has_parking'] ?? true,
       isAnimalFriendly: map['is_animal_friendly'] ?? true,
-      dateAvailable:
-          DateTime.fromMillisecondsSinceEpoch(map['date_available'] ?? 0),
+      dateAvailable: DateTime.parse(map['date_available'] ?? '0'),
       tenureType:
-          TenureTypeFun.fromMap(map['tenure_type'] ?? TenureType.freehold),
+          TenureTypeFun.fromMap(map['tenure_type'] ?? TenureType.freehold.json),
       energyRate: CustomEnergyRateFun.fromMap(
           map['energy_rate'] ?? CustomEnergyRate.k1to20.json),
     );

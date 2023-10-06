@@ -30,10 +30,8 @@ class ProdSharedWithModel extends ProdSharedWithEntity {
   factory ProdSharedWithModel.fromMap(Map<String, dynamic> map) {
     return ProdSharedWithModel(
       uid: map['uid'] ?? '',
-      requestTime:
-          DateTime.fromMillisecondsSinceEpoch(map['request_time'] ?? 0),
-      responceTime:
-          DateTime.fromMillisecondsSinceEpoch(map['responce_time'] ?? 0),
+      requestTime: DateTime.parse(map['request_time'] ?? '0'),
+      responceTime: DateTime.parse(map['responce_time'] ?? '0'),
       isApproved: map['is_approved'] ?? false,
       isBlocked: map['is_blocked'] ?? false,
     );

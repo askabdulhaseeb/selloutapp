@@ -22,9 +22,9 @@ class ClothAndFootModel extends ClothAndFootEntity {
   // ignore: sort_constructors_first
   factory ClothAndFootModel.fromMap(Map<String, dynamic> map) {
     return ClothAndFootModel(
-      sizeID: map['size_id'] as String,
-      colorID: map['color_id'] as String,
-      quantity: map['quantity'] as int,
+      sizeID: map['size_id'] ?? '',
+      colorID: map['color_id'] ?? '',
+      quantity: map['quantity'] ?? 0,
     );
   }
 }

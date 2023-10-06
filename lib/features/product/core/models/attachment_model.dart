@@ -80,7 +80,7 @@ class AttachmentModel extends AttachmentEntity {
       attachmentID: map['attachment_id'] ?? '',
       storagePath: map['storage_path'] ?? '',
       canDeleteOn: map['can_delete_on'] != null
-          ? DateTime.parse(map['can_delete_on'] ?? 0)
+          ? DateTime.parse(map['can_delete_on'] ?? '0')
           : null,
       localStoragePath: map['local_storage_path'] ?? '',
       isLive: map['is_live'] ?? true,

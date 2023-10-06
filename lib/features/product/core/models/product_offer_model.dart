@@ -9,8 +9,8 @@ class ProdOfferModel extends ProdOfferEntity {
     required String chatId,
     required double price,
     required ProdDeliveryTypeEnum deliveryType,
-    required int orderTime,
-    required int responseTime,
+    required DateTime orderTime,
+    required DateTime responseTime,
     required ProdOfferStatusEnum status,
   }) : super(
           uid: uid,
