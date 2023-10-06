@@ -7,7 +7,7 @@ class ProdSharedWithModel extends ProdSharedWithEntity {
     required DateTime requestTime,
     required DateTime responceTime,
     required bool isApproved,
-    required bool isBlocked,
+    bool isBlocked = false,
   }) : super(
           uid: uid,
           requestTime: requestTime,
@@ -26,6 +26,16 @@ class ProdSharedWithModel extends ProdSharedWithEntity {
     };
   }
 
+  // ignore: sort_constructors_first
+  factory ProdSharedWithModel.fromEntity(ProdSharedWithEntity entity) {
+    return ProdSharedWithModel(
+      uid: entity.uid,
+      requestTime: entity.requestTime,
+      responceTime: entity.responceTime,
+      isApproved: entity.isApproved,
+      isBlocked: entity.isBlocked,
+    );
+  }
   // ignore: sort_constructors_first
   factory ProdSharedWithModel.fromMap(Map<String, dynamic> map) {
     return ProdSharedWithModel(

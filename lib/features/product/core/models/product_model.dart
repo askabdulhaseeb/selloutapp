@@ -5,7 +5,9 @@ import '../../../../enums/listings/prod_privacy_type.dart';
 import '../../../../enums/listings/prod_property_type.dart';
 import '../../../auth/core/local_source/local_auth.dart';
 import '../../report/data/models/report_product_model.dart';
+import '../entities/attachment_entity.dart';
 import '../entities/product_entity.dart';
+import '../entities/product_share_with_entity.dart';
 import 'attachment_model.dart';
 import 'listing/cloth_and_food_model.dart';
 import 'listing/pet_model.dart';
@@ -76,46 +78,51 @@ class ProductModel extends ProductEntity {
           listInfo: listInfo,
         );
 
-  // Map<String, dynamic> toMap() {
-  //   if (shareWith.isEmpty) {
-  //     shareWith.add(ProdSharedWithModel(
-  //       uid: uid,
-  //       isApproved: true,
-  //       requestTime: DateTime.now(),
-  //       responceTime: DateTime.now(),
-  //     ));
-  //   }
-  //   return <String, dynamic>{
-  //     'pid': pid,
-  //     'uid': uid,
-  //     'list_id': listID,
-  //     'title': title,
-  //     'prod_urls': prodURL.map((AttachmentModel e) => e.toMap()).toList(),
-  //     'condition': condition.json,
-  //     'description': description,
-  //     'category': category,
-  //     'categories_paths': categoryPaths,
-  //     // 'sub_categories': subCategories,
-  //     'price': price,
-  //     'access_code': accessCode,
-  //     'share_with':
-  //         shareWith.map((ProdSharedWithModel e) => e.toMap()).toList(),
-  //     'currency': currency,
-  //     'quantity': quantity,
-  //     'properties': ProductPropertyTypeConvertor().toStringList(properties),
-  //     'accept_offers': acceptOffers,
-  //     'privacy': privacy.json,
-  //     'delivery': delivery.json,
-  //     'delivery_free': deliveryFree,
-  //     'mini_offer_limit': offerLimit,
-  //     'orders': orders,
-  //     'offers': offers,
-  //     'reports': <ReportProductModel>[],
-  //     'timestamp': timestamp,
-  //     'is_available': isAvailable,
-  //     'list_info': _listInfo(),
-  //   };
-  // }
+  Map<String, dynamic> toMap() {
+    if (shareWith.isEmpty) {
+      shareWith.add(ProdSharedWithModel(
+        uid: uid,
+        isApproved: true,
+        requestTime: DateTime.now(),
+        responceTime: DateTime.now(),
+      ));
+    }
+    return <String, dynamic>{
+      'pid': pid,
+      'uid': uid,
+      'list_id': listID,
+      'title': title,
+      'prod_urls': prodURL.map((AttachmentEntity e) {
+        final AttachmentModel temp = AttachmentModel.fromEntity(e);
+        return temp.toMap();
+      }).toList(),
+      'condition': condition.json,
+      'description': description,
+      'category': category,
+      'categories_paths': categoryPaths,
+      // 'sub_categories': subCategories,
+      'price': price,
+      'access_code': accessCode,
+      'share_with': shareWith.map((ProdSharedWithEntity e) {
+        final ProdSharedWithModel temp = ProdSharedWithModel.fromEntity(e);
+        return temp.toMap();
+      }).toList(),
+      'currency': currency,
+      'quantity': quantity,
+      'properties': ProductPropertyTypeConvertor().toStringList(properties),
+      'accept_offers': acceptOffers,
+      'privacy': privacy.json,
+      'delivery': delivery.json,
+      'delivery_free': deliveryFree,
+      'mini_offer_limit': offerLimit,
+      'orders': orders,
+      'offers': offers,
+      'reports': <ReportProductModel>[],
+      'timestamp': timestamp,
+      'is_available': isAvailable,
+      'list_info': _listInfo(),
+    };
+  }
 
   // Map<String, dynamic>? report() {
   //   return <String, dynamic>{
