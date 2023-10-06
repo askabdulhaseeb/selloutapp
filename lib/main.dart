@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'config/routes/my_providers.dart';
 import 'config/routes/my_routies.dart';
 import 'config/themes/app_theme.dart';
-import 'features/auth/signin/presentation/screens/signin_screen.dart';
 import 'features/dashboard/presentation/screens/dashboard_screen.dart';
 
 void main() {

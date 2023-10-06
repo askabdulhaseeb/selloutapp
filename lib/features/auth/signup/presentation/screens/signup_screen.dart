@@ -7,7 +7,7 @@ import '../../../../../core/widgets/custom_elevated_button.dart';
 import '../../../../../core/widgets/custom_textformfield.dart';
 import '../../../../../core/widgets/password_textformfield.dart';
 import '../../../../../core/widgets/phone_number_field.dart';
-import '../../../../../utils/app_validator.dart';
+import '../../../../../core/utils/app_validator.dart';
 import '../../../core/widgets/auth_bottom_feature_display_widget.dart';
 import '../../../core/widgets/auth_sellout_title_widget.dart';
 import '../providers/signup_provider.dart';
