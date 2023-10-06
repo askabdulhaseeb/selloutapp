@@ -1,16 +1,17 @@
 enum ListType {
-  item('item', 'IT', 'Item'),
-  clothesAndFoot('clothes-footwear', 'CF', 'Clothes Footwear'),
-  vehicles('vehicles', 'VE', 'Vehicles'),
-  foodAndDrinks('food-drinks', 'FD', 'Food Drinks'),
-  properties('properties-sale-rent', 'PR', 'Properties Sale & Rent'),
-  services('services', 'SE', 'Services'),
-  pet('pet', 'PE', 'Pet');
+  item('item', 'IT', 'Item', 10),
+  clothesAndFoot('clothes-footwear', 'CF', 'Clothes Footwear', 30),
+  vehicles('vehicles', 'VE', 'Vehicles', 20),
+  foodAndDrinks('food-drinks', 'FD', 'Food Drinks', 10),
+  properties('properties-sale-rent', 'PR', 'Properties Sale & Rent', 50),
+  services('services', 'SE', 'Services', 10),
+  pet('pet', 'PE', 'Pet', 20);
 
-  const ListType(this.json, this.short, this.display);
+  const ListType(this.json, this.short, this.display, this.noOdPhotos);
   final String json;
   final String short;
   final String display;
+  final int noOdPhotos;
 }
 
 class ListTypeConv {

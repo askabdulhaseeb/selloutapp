@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'item_feed_add_new_promo_square_widget.dart';
+import 'product_feed_add_new_promo_square_widget.dart';
 
-class ItemFeedProMoListWidget extends StatelessWidget {
-  const ItemFeedProMoListWidget({super.key});
+class ProductFeedProMoListWidget extends StatelessWidget {
+  const ProductFeedProMoListWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class ItemFeedProMoListWidget extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         child: Row(
           children: <Widget>[
-            const ItemFeedAddProMoSquareWidget(),
+            const ProductFeedAddProMoSquareWidget(),
             ListView.separated(
               itemCount: 10,
               primary: false,

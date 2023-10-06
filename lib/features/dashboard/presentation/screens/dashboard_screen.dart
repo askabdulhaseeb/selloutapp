@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
-import '../../../item/item_feed/presentation/screens/item_feed_screen.dart';
+import '../../../product/feed/presentation/screens/product_feed_screen.dart';
 import '../../../listing/create_listing/presentation/screens/create_listing_screen.dart';
 import '../widgets/app_bar_icon_button_widget.dart';
 
@@ -18,7 +18,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   final PersistentTabController _controller = PersistentTabController();
 
   List<Widget> _buildScreens() => <Widget>[
-        const ItemFeedScreen(),
+        const ProductFeedScreen(),
         const Center(child: Text('Explore')),
         const Center(child: Text('Services')),
         const CreateListingsScreen(),

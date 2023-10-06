@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ItemFeedAddProMoSquareWidget extends StatelessWidget {
-  const ItemFeedAddProMoSquareWidget({super.key});
+class ProductFeedAddProMoSquareWidget extends StatelessWidget {
+  const ProductFeedAddProMoSquareWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
