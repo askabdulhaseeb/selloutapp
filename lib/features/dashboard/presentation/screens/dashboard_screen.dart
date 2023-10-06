@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 import '../../../item/item_feed/presentation/screens/item_feed_screen.dart';
+import '../../../listing/create_listing/presentation/screens/create_listing_screen.dart';
 import '../widgets/app_bar_icon_button_widget.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -20,7 +21,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         const ItemFeedScreen(),
         const Center(child: Text('Explore')),
         const Center(child: Text('Services')),
-        const Center(child: Text('Listing')),
+        const CreateListingsScreen(),
         const Center(child: Text('Chat')),
         const Center(child: Text('Profile')),
       ];
@@ -32,7 +33,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           title: 'Home',
           activeColorPrimary: Theme.of(context).primaryColor,
           inactiveColorPrimary: Theme.of(context).iconTheme.color,
-          routeAndNavigatorSettings: RouteAndNavigatorSettings(
+          routeAndNavigatorSettings: const RouteAndNavigatorSettings(
             initialRoute: '/',
             routes: <String, Widget Function(BuildContext)>{},
           ),
