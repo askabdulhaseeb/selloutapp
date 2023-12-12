@@ -5,9 +5,11 @@ import 'config/routes/my_providers.dart';
 import 'config/routes/my_routies.dart';
 import 'config/themes/app_theme.dart';
 import 'features/auth/signin/presentation/screens/signin_screen.dart';
+import 'locator.dart';
 
 Future<void> main() async {
   await dotenv.load(fileName: '.env');
+  await getItSetup();
   runApp(const MyApp());
 }
 

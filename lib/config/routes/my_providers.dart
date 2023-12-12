@@ -8,9 +8,11 @@ import '../../features/listing/provider/listing_provider.dart';
 import '../../features/payment/provider/payment_provider.dart';
 import '../../features/promo/create_promo/presentation/providers/create_promo_provider.dart';
 import '../../features/review/give_review/presentation/providers/give_review_provider.dart';
+import '../../locator.dart';
 
 List<SingleChildWidget> get myProviders => <SingleChildWidget>[
-      ChangeNotifierProvider<SigninProvider>.value(value: SigninProvider()),
+      ChangeNotifierProvider<SignInProvider>.value(
+          value: SignInProvider(locator())),
       ChangeNotifierProvider<SignupProvider>.value(value: SignupProvider()),
       // LISTING
       ChangeNotifierProvider<ListingProvider>.value(value: ListingProvider()),
