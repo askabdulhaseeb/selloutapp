@@ -11,9 +11,11 @@ import '../../features/review/give_review/presentation/providers/give_review_pro
 import '../../locator.dart';
 
 List<SingleChildWidget> get myProviders => <SingleChildWidget>[
+      // AUTH
       ChangeNotifierProvider<SignInProvider>.value(
           value: SignInProvider(locator())),
-      ChangeNotifierProvider<SignupProvider>.value(value: SignupProvider()),
+      ChangeNotifierProvider<SignUpProvider>.value(
+          value: SignUpProvider(locator())),
       // LISTING
       ChangeNotifierProvider<ListingProvider>.value(value: ListingProvider()),
       // PROMO

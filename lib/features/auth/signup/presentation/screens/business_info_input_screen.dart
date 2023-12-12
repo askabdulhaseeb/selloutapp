@@ -18,8 +18,8 @@ class BusinessInfoInputScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Consumer<SignupProvider>(
-            builder: (BuildContext context, SignupProvider suPro, _) {
+        child: Consumer<SignUpProvider>(
+            builder: (BuildContext context, SignUpProvider suPro, _) {
           return Column(
             children: <Widget>[
               CustomTextFormField(

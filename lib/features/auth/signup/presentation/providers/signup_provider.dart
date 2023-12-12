@@ -1,18 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/phone_number.dart';
 
+import '../../../../../enums/user/account_visibility_type.dart';
+import '../../../../../enums/user/user_role_type.dart';
+import '../../data/params/signup_param.dart';
+import '../../domain/usecases/get_signup_usecase.dart';
 import '../screens/account_type_screen.dart';
 
-class SignupProvider extends ChangeNotifier {
+class SignUpProvider extends ChangeNotifier {
+  SignUpProvider(this._signUpUsecase);
+  final GetSignUpUsecase _signUpUsecase;
+
   void onContinue(BuildContext context) {
     if (!(_key.currentState?.validate() ?? false)) return;
     Navigator.of(context).pushNamed(AccountTypeScreen.routeName);
   }
 
-  void onSignup(BuildContext context) {
+  void onSignup(BuildContext context) async {
     try {
       _onLoadingUpdate(true);
-      // TODO: ON SIGNUP
+      SignUpParam param = SignUpParam(
+        name: _name.text,
+        username: _username.text,
+        email: _email.text,
+        password: _password.text,
+        role: UserRoleType.user,
+        phone: _phoneNumber,
+        accountType: AccountVisibilityType.personal,
+      );
+      final bool result = await _signUpUsecase.signup(param);
+      if (result) {
+        // TODO: On Signup
+      }
     } catch (e) {
       debugPrint(e.toString());
     }
