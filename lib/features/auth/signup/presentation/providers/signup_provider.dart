@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/phone_number.dart';
 
+import '../screens/account_type_screen.dart';
+
 class SignupProvider extends ChangeNotifier {
-  void onSignup(BuildContext context) {
+  void onContinue(BuildContext context) {
     if (!(_key.currentState?.validate() ?? false)) return;
+    Navigator.of(context).pushNamed(AccountTypeScreen.routeName);
+  }
+
+  void onSignup(BuildContext context) {
     try {
       _onLoadingUpdate(true);
       // TODO: ON SIGNUP

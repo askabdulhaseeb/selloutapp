@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class DisplayProMoScreen extends StatelessWidget {
-  const DisplayProMoScreen({Key? key}) : super(key: key);
+  const DisplayProMoScreen({super.key});
   static const String routeName = '/display-promo';
   @override
   Widget build(BuildContext context) {

@@ -5,7 +5,7 @@ import '../../../../../enums/listings/list_type.dart';
 import '../widgets/create_listing_tile.dart';
 
 class CreateListingsScreen extends StatelessWidget {
-  const CreateListingsScreen({Key? key}) : super(key: key);
+  const CreateListingsScreen({super.key});
   static const String routeName = '/create-listings';
   @override
   Widget build(BuildContext context) {

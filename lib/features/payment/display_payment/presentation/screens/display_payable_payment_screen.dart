@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class DisplayPayablePaymentScreen extends StatelessWidget {
-  const DisplayPayablePaymentScreen({Key? key}) : super(key: key);
+  const DisplayPayablePaymentScreen({super.key});
   static const String routeName = '/payable-payment';
   @override
   Widget build(BuildContext context) {

@@ -7,7 +7,7 @@ import '../../../listing/create_listing/presentation/screens/create_listing_scre
 import '../widgets/app_bar_icon_button_widget.dart';
 
 class DashboardScreen extends StatefulWidget {
-  const DashboardScreen({Key? key}) : super(key: key);
+  const DashboardScreen({super.key});
   static const String routeName = '/dashboard';
 
   @override

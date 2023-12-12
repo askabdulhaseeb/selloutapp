@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class DisplayListingsScreen extends StatelessWidget {
-  const DisplayListingsScreen({Key? key}) : super(key: key);
+  const DisplayListingsScreen({super.key});
   static const String routeName = '/display-listings';
   @override
   Widget build(BuildContext context) {

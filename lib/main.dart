@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
 import 'config/routes/my_providers.dart';
 import 'config/routes/my_routies.dart';
 import 'config/themes/app_theme.dart';
-import 'features/dashboard/presentation/screens/dashboard_screen.dart';
+import 'features/auth/signin/presentation/screens/signin_screen.dart';
 
-void main() {
+Future<void> main() async {
+  await dotenv.load(fileName: '.env');
   runApp(const MyApp());
 }
 
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Sellout App',
         theme: AppThemes.light,
-        home: const DashboardScreen(),
+        home: const SigninScreen(),
         routes: myRoutes,
       ),
     );

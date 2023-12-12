@@ -38,24 +38,24 @@ class CustomElevatedButton extends StatelessWidget {
             margin: margin ?? const EdgeInsets.symmetric(vertical: 6),
             decoration: BoxDecoration(
               color: bgColor ?? Theme.of(context).primaryColor,
-              borderRadius: borderRadius ?? BorderRadius.circular(12),
+              borderRadius: borderRadius ?? BorderRadius.circular(8),
               border: border,
             ),
             child: Material(
-              borderRadius: borderRadius ?? BorderRadius.circular(12),
+              borderRadius: borderRadius ?? BorderRadius.circular(8),
               color: bgColor ?? Theme.of(context).primaryColor,
               child: InkWell(
-                borderRadius: borderRadius ?? BorderRadius.circular(12),
+                borderRadius: borderRadius ?? BorderRadius.circular(8),
                 onTap: onTap,
                 child: Container(
-                  padding: padding ?? const EdgeInsets.symmetric(vertical: 10),
+                  padding: padding ?? const EdgeInsets.symmetric(vertical: 6),
                   alignment: Alignment.center,
                   child: Text(
                     title,
                     style: textStyle ??
                         TextStyle(
                           color: textColor ?? Colors.white,
-                          fontSize: 18,
+                          fontSize: 16,
                         ),
                   ),
                 ),

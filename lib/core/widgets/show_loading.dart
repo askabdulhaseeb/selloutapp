@@ -17,7 +17,7 @@ Future showLoadingDislog(BuildContext context) {
 }
 
 class ShowLoading extends StatelessWidget {
-  const ShowLoading({Key? key}) : super(key: key);
+  const ShowLoading({super.key});
   @override
   Widget build(BuildContext context) {
     return const Center(

@@ -8,7 +8,7 @@ import '../../../../../core/widgets/phone_number_field.dart';
 import '../providers/signup_provider.dart';
 
 class BusinessInfoInputScreen extends StatelessWidget {
-  const BusinessInfoInputScreen({Key? key}) : super(key: key);
+  const BusinessInfoInputScreen({super.key});
   static const String routeName = '/business-info';
   @override
   Widget build(BuildContext context) {

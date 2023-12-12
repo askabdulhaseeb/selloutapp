@@ -6,7 +6,7 @@ import '../widgets/account_type_tile_widget.dart';
 import 'business_info_input_screen.dart';
 
 class AccountTypeScreen extends StatelessWidget {
-  const AccountTypeScreen({Key? key}) : super(key: key);
+  const AccountTypeScreen({super.key});
   static const String routeName = '/account-type';
   @override
   Widget build(BuildContext context) {

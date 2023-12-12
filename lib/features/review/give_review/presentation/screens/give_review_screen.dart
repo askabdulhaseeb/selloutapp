@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class GiveReviewScreen extends StatelessWidget {
-  const GiveReviewScreen({Key? key}) : super(key: key);
+  const GiveReviewScreen({super.key});
   static const String routeName = '/give-review';
   @override
   Widget build(BuildContext context) {

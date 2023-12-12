@@ -1,41 +1,42 @@
 name: selloutapp
 description: A new Flutter project.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.1.2 <4.0.0'
+  sdk: ">=3.1.2 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.2
-  provider: ^6.0.5
+  cupertino_icons: ^1.0.6
+  provider: ^6.1.1
   image_picker: ^1.0.4
-  permission_handler: ^11.0.0
+  permission_handler: ^11.1.0
   cached_network_image: ^3.3.0
   flutter_rating_bar: ^4.0.1
   intl_phone_field: ^3.2.0
   carousel_slider: ^4.2.1
   scrollable_positioned_list: ^0.3.8
-  fast_contacts: ^3.0.3
+  fast_contacts: ^3.1.2
   toggle_switch: ^2.1.0
-  story_view: ^0.15.0
-  path_provider: ^2.0.14
-  path: ^1.8.2
-  shared_preferences: ^2.1.1
+  story_view: ^0.16.0
+  path_provider: ^2.1.1
+  path: ^1.8.3
+  shared_preferences: ^2.2.2
   table_calendar: ^3.0.9
-  video_player: ^2.7.2
+  video_player: ^2.8.1
   persistent_bottom_nav_bar: ^5.0.2
+  flutter_dotenv: ^5.1.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.1
   flutter_launcher_icons: ^0.13.1
-  flutter_native_splash: ^2.2.11
+  flutter_native_splash: ^2.3.8
 
 flutter_icons:
   android: true
@@ -50,13 +51,15 @@ flutter_native_splash:
   # color_dark: "#000000"
   color: "#ffffff"
   image: assets/images/icon_border.png
-  
+
 flutter:
   uses-material-design: true
 
   assets:
     - assets/icons/
     - assets/images/
+    - .env
+    - example.env
 
   # example:
   # fonts:

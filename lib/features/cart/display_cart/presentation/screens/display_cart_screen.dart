@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class DisplayCartScreen extends StatelessWidget {
-  const DisplayCartScreen({Key? key}) : super(key: key);
+  const DisplayCartScreen({super.key});
   static const String routeName = '/display-cart';
   @override
   Widget build(BuildContext context) {
