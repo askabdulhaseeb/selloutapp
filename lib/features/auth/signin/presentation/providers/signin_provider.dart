@@ -1,5 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../core/sources/locals/local_db.dart';
 import '../../data/params/signin_param.dart';
 import '../../domain/usecases/get_signin_usecase.dart';
 
@@ -18,7 +20,12 @@ class SignInProvider extends ChangeNotifier {
       );
       final bool result = await _getSigninUsecase.call(param: param);
       if (result) {
+        debugPrint('Result: $result');
+        debugPrint(LocalDB.accessToken());
+        debugPrint(LocalDB.refreshToken());
         // TODO: On Login Done
+      } else {
+        debugPrint('Result: $result');
       }
     } catch (e) {
       debugPrint(e.toString());
@@ -42,8 +49,10 @@ class SignInProvider extends ChangeNotifier {
   // VARIABLES
   //
   // TextEditingController
-  final TextEditingController _email = TextEditingController();
-  final TextEditingController _password = TextEditingController();
+  final TextEditingController _email =
+      TextEditingController(text: kDebugMode ? 'abaidmalik243@gmail.com' : '');
+  final TextEditingController _password =
+      TextEditingController(text: kDebugMode ? '123456' : '');
   // Key
   final GlobalKey<FormState> _key = GlobalKey<FormState>();
   // Bool

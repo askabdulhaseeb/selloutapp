@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/phone_number.dart';
 
@@ -67,7 +68,7 @@ class SignUpProvider extends ChangeNotifier {
   // Business
   TextEditingController get title => _title;
   TextEditingController get tag => _tag;
-  TextEditingController get website => _website;
+  TextEditingController get registerNo => _registerNo;
   PhoneNumber get businessNumber => _businessNumber;
 
   GlobalKey<FormState> get key => _key;
@@ -76,11 +77,16 @@ class SignUpProvider extends ChangeNotifier {
   // VARIABLES
   //
   // TextEditingController
-  final TextEditingController _name = TextEditingController();
-  final TextEditingController _username = TextEditingController();
-  final TextEditingController _email = TextEditingController();
-  final TextEditingController _password = TextEditingController();
-  final TextEditingController _confirmPassword = TextEditingController();
+  final TextEditingController _name =
+      TextEditingController(text: kDebugMode ? 'name' : '');
+  final TextEditingController _username =
+      TextEditingController(text: kDebugMode ? 'username' : '');
+  final TextEditingController _email =
+      TextEditingController(text: kDebugMode ? 'test@test.com' : '');
+  final TextEditingController _password =
+      TextEditingController(text: kDebugMode ? '1234567890' : '');
+  final TextEditingController _confirmPassword =
+      TextEditingController(text: kDebugMode ? '1234567890' : '');
   PhoneNumber _phoneNumber = PhoneNumber(
     countryISOCode: 'GB',
     countryCode: 'GB',
@@ -89,7 +95,7 @@ class SignUpProvider extends ChangeNotifier {
   // Business
   final TextEditingController _title = TextEditingController();
   final TextEditingController _tag = TextEditingController();
-  final TextEditingController _website = TextEditingController();
+  final TextEditingController _registerNo = TextEditingController();
   PhoneNumber _businessNumber = PhoneNumber(
     countryCode: 'GB',
     countryISOCode: 'GB',

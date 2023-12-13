@@ -7,21 +7,19 @@ class AuthSelloutTitleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         children: <Widget>[
-          const SizedBox(height: 60),
           Text(
             'SellOut',
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 18,
+              fontSize: 24,
               color: Theme.of(context).primaryColor,
             ),
           ),
           Text(
-            subtitle ??
-                'SellOut helps you sell the stuff you want to the people you want',
+            subtitle ?? 'SellOut helps you buy & Sell and provide services',
             textAlign: TextAlign.center,
           ),
         ],

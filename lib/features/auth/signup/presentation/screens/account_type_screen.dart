@@ -11,30 +11,24 @@ class AccountTypeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
       appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           children: <Widget>[
             const AuthSelloutTitleWidget(
-              subtitle: 'Please Choose your account type',
+              subtitle: 'Please Select below',
             ),
+            const SizedBox(height: 24),
             AccountTypeTileWidget(
               title: 'Personal',
-              subtitle: '''
-  - Buy All type of product
-  - Sell your personal belongings''',
+              subtitle: '',
               icon: Icons.person,
               onTap: () {},
             ),
             AccountTypeTileWidget(
               title: 'Business',
-              subtitle: '''
-  - Sell product easily
-  - Sell your services
-  - Win Customer Trust
-  - Manage your business easily''',
+              subtitle: '',
               icon: CupertinoIcons.briefcase_fill,
               onTap: () => Navigator.of(context)
                   .pushNamed(BusinessInfoInputScreen.routeName),

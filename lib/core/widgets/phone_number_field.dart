@@ -7,11 +7,13 @@ class PhoneNumberField extends StatefulWidget {
     required this.initialCountryCode,
     required this.onChange,
     this.bgColor,
-    Key? key,
-  }) : super(key: key);
+    this.title,
+    super.key,
+  });
   final Function(PhoneNumber)? onChange;
   final String? initialCountryCode;
   final Color? bgColor;
+  final String? title;
   @override
   State<PhoneNumberField> createState() => _PhoneNumberFieldState();
 }
@@ -24,9 +26,9 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          const Text(
-            'Phone Number',
-            style: TextStyle(fontWeight: FontWeight.bold),
+          Text(
+            widget.title ?? 'Phone Number',
+            style: const TextStyle(fontWeight: FontWeight.bold),
           ),
           IntlPhoneField(
             textInputAction: TextInputAction.done,

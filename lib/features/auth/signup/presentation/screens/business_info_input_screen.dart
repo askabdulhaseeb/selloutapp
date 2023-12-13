@@ -15,6 +15,7 @@ class BusinessInfoInputScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Business Info'),
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -36,17 +37,18 @@ class BusinessInfoInputScreen extends StatelessWidget {
                 readOnly: suPro.isLoading,
               ),
               CustomTextFormField(
-                controller: suPro.website,
-                title: 'Website',
-                hint: 'Ex. nike.com',
+                controller: suPro.registerNo,
+                title: 'Companies House No.',
+                hint: 'Ex. 12347890',
                 readOnly: suPro.isLoading,
               ),
               PhoneNumberField(
+                title: 'Business Number',
                 initialCountryCode: suPro.businessNumber.countryCode,
                 onChange: (PhoneNumber? value) {},
               ),
               CustomElevatedButton(
-                title: 'Register Business',
+                title: 'Continue',
                 isLoading: suPro.isLoading,
                 onTap: () {},
               ),
